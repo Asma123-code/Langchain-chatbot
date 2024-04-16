@@ -11,7 +11,7 @@ from langchain_community.vectorstores import Pinecone
 from langchain_community.chat_models import ChatOpenAI
 from openai import OpenAI
 
-OPENAI_API_KEY="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"
+OPENAI_API_KEY="sk-f0hESy#$%^&CKQH"
 #index_name = 'chatbot'
 
 # Initialize SentenceTransformer model
@@ -20,7 +20,7 @@ model = SentenceTransformer('all-MiniLM-L6-v2')
 class PineconeConnected:
     def __init__(self, index_name: str, pinecone_api_key: str, pinecone_env: str, openai_key: str):
         embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)  # Use the openai_key parameter
-        self.pinecone = pinecone.Pinecone(api_key='28b14f48-384e-464b-89c9-f94509a6efbe')
+        self.pinecone = pinecone.Pinecone(api_key='28b14#$%^&6efbe')
         self.vector_db = Pinecone.from_existing_index(index_name, embeddings)  # VectorStore object with the reference + Pinecone index loaded
 
     def query(self, query: str, book_title=None):  # Include self parameter
@@ -33,7 +33,7 @@ def find_match(input):
 
 def query_refiner(conversation, query):
 
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key="sk-f0h#$%^&QH")
     response = client.chat.completions.create(
     model="gpt-3.5-turbo-instruct",
     prompt=f"Given the following user query and conversation log, formulate a question that would be the most relevant to provide the user with an answer from a knowledge base.\n\nCONVERSATION LOG: \n{conversation}\n\nQuery: {query}\n\nRefined Query:",
